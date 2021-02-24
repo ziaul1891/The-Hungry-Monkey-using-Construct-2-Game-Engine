@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Credit sheet</name>
+    <events>
+        <event-block sid="7462742375365826">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="5819178528874567" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">contactrafi</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Open URL in new window" sid="9951494396419493" type="Browser">
+                    <param id="0" name="URL">&quot;http://www.facebook.com/ArrowheadRafi&quot;</param>
+                    <param id="1" name="Tag">&quot;NewWindow&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6012034233582178">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="6524077094064796" type="Mouse">
+                    <param id="0" name="Object">contactrafi</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="4625240333895891" type="contactrafi">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1588109963410389">
+            <conditions>
+                <condition id="7" inverted="1" name="Cursor is over object" sid="692639865696177" type="Mouse">
+                    <param id="0" name="Object">contactrafi</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="6361348762921428" type="contactrafi">
+                    <param id="0" name="Opacity">50</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7767487962388496">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="4170984555402146" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">contactziaul</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Open URL in new window" sid="1396292234446162" type="Browser">
+                    <param id="0" name="URL">&quot;http://www.facebook.com/ziaulmishu?ref=tn_tnmn&quot;</param>
+                    <param id="1" name="Tag">&quot;NewWindow&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2097401117197267">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="2176433822526252" type="Mouse">
+                    <param id="0" name="Object">contactziaul</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="1247599802054363" type="contactziaul">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9069750268812468">
+            <conditions>
+                <condition id="7" inverted="1" name="Cursor is over object" sid="2922215739276489" type="Mouse">
+                    <param id="0" name="Object">contactziaul</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="5231786178976634" type="contactziaul">
+                    <param id="0" name="Opacity">50</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8042173677544844">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="9236166441951543" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">menufromcredit</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="8554906814987155" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6424942859678257">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="6445118038460047" type="Mouse">
+                    <param id="0" name="Object">menufromcredit</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="4196566281376052" type="menufromcredit">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6523087719923883">
+            <conditions>
+                <condition id="7" inverted="1" name="Cursor is over object" sid="5787447273913777" type="Mouse">
+                    <param id="0" name="Object">menufromcredit</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="1211206785526954" type="menufromcredit">
+                    <param id="0" name="Opacity">50</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

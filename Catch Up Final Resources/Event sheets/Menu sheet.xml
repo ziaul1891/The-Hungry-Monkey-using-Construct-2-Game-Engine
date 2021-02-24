@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Menu sheet</name>
+    <events>
+        <event-block sid="1970439398775737">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="2541766222394876" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="8712112895609677" type="System">
+                    <param id="0" name="Variable">Scores</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="3704126258015977" type="System">
+                    <param id="0" name="Variable">hit</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="3753036897705994" type="System">
+                    <param id="0" name="Variable">fruitcount</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Play" sid="9799061994320902" type="Audio">
+                    <param id="0" name="Audio file">06 Jezaig(2)</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">-10</param>
+                    <param id="1" name="Tag (optional)">&quot;H&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6793746964502213">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="6248779943164889" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">playboard</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="5583211274807553" type="System">
+                    <param id="0" name="Layout">Game</param>
+                </action>
+                <action id="-9" name="Set value" sid="8279765648786445" type="System">
+                    <param id="0" name="Variable">hit</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="1216180592437022" type="System">
+                    <param id="0" name="Variable">fruitcount</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="8018682971981208" type="System">
+                    <param id="0" name="Variable">Scores</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="6" name="Stop" sid="9458735546322572" type="Audio">
+                    <param id="0" name="Tag">&quot;H&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7660778733016242">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="4009318839920891" type="Mouse">
+                    <param id="0" name="Object">playboard</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="6193911245636268" type="playboard">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="5818527165676224" type="playtext">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3484427815022594">
+            <conditions>
+                <condition id="7" inverted="1" name="Cursor is over object" sid="7784421578496401" type="Mouse">
+                    <param id="0" name="Object">playboard</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="7149752553730871" type="playboard">
+                    <param id="0" name="Opacity">30</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="9168075429065497" type="playtext">
+                    <param id="0" name="Opacity">50</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9734289518932734">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="5582264215472504" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">creditsboard</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="9962591627183535" type="System">
+                    <param id="0" name="Layout">Credit</param>
+                </action>
+                <action id="6" name="Stop" sid="8521932915124424" type="Audio">
+                    <param id="0" name="Tag">&quot;H&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7986275214610582">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="9201196823819714" type="Mouse">
+                    <param id="0" name="Object">creditsboard</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="1774892044479693" type="creditsboard">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="5299713307737229" type="credittext">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="138288933557546">
+            <conditions>
+                <condition id="7" inverted="1" name="Cursor is over object" sid="3246181897735412" type="Mouse">
+                    <param id="0" name="Object">creditsboard</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="1694836860999072" type="creditsboard">
+                    <param id="0" name="Opacity">40</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="694965228668238" type="credittext">
+                    <param id="0" name="Opacity">50</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4984016131701361">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="75254030989104" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">instructionboard</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="4553073540198451" type="System">
+                    <param id="0" name="Layout">Instruction</param>
+                </action>
+                <action id="6" name="Stop" sid="7664580229784417" type="Audio">
+                    <param id="0" name="Tag">&quot;H&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5021882272209916">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="1566709473692991" type="Mouse">
+                    <param id="0" name="Object">instructionboard</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="4426630997751501" type="instructionboard">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="7366538987994028" type="instructiontext">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1360414719948126">
+            <conditions>
+                <condition id="7" inverted="1" name="Cursor is over object" sid="4369976790776337" type="Mouse">
+                    <param id="0" name="Object">instructionboard</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="4651402686165781" type="instructionboard">
+                    <param id="0" name="Opacity">40</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="2815831923970766" type="instructiontext">
+                    <param id="0" name="Opacity">40</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8870215937609471">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="869692039385045" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">highscoresboard</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="7364164723212407" type="System">
+                    <param id="0" name="Layout">Highscores</param>
+                </action>
+                <action id="6" name="Stop" sid="7971902181368606" type="Audio">
+                    <param id="0" name="Tag">&quot;H&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7754271418252265">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="3249442070647683" type="Mouse">
+                    <param id="0" name="Object">highscoresboard</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="9099048804687669" type="highscoresboard">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="856469821953172" type="highscorestext">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6254760015341598">
+            <conditions>
+                <condition id="7" inverted="1" name="Cursor is over object" sid="9563622270629696" type="Mouse">
+                    <param id="0" name="Object">highscoresboard</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="8508815721842826" type="highscoresboard">
+                    <param id="0" name="Opacity">40</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="880525539595736" type="highscorestext">
+                    <param id="0" name="Opacity">50</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

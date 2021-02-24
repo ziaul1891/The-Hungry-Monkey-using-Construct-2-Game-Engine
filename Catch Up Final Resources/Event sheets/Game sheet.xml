@@ -1,0 +1,710 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Game sheet</name>
+    <events>
+        <variable constant="0" name="combomultiplier" sid="6561813099627234" static="0" type="number">1</variable>
+        <variable constant="0" name="highscore" sid="637990950174221" static="0" type="number">0</variable>
+        <variable constant="0" name="hit" sid="9102721440859222" static="0" type="number">0</variable>
+        <variable constant="0" name="fruitcount" sid="6508446503575031" static="0" type="number">0</variable>
+        <variable constant="0" name="Scores" sid="257300522585505" static="0" type="number">0</variable>
+        <event-block sid="2049745766702128">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="1468926211039902" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="5418832590537066" type="PlayerImages">
+                    <param id="0" name="Pin to">Player</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="2306501948560526" type="PlayerImages">
+                    <param id="0" name="Animation">&quot;Standing&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="8702310091977374" type="crow">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="5615113924031945" type="crow">
+                    <param id="0" name="Angle">0</param>
+                </action>
+                <action id="-13" name="Set time scale" sid="4363167698536015" type="System">
+                    <param id="0" name="Time scale">1.0</param>
+                </action>
+                <action id="0" name="Play" sid="2111382524721504" type="Audio">
+                    <param id="0" name="Audio file">rainforest_ambience-GlorySunz-1938133500</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">-10</param>
+                    <param id="1" name="Tag (optional)">&quot;R&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8582436005505734">
+            <conditions>
+                <condition behavior="Platform" id="8" name="On moved" sid="6614385484762595" type="Player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="2896813639901606" type="PlayerImages">
+                    <param id="0" name="Animation">&quot;Running&quot; </param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7671812372453242">
+            <conditions>
+                <condition id="2" name="Key is down" sid="9492511037859918" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="411778660445823" type="PlayerImages">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6347630638142953">
+            <conditions>
+                <condition id="2" name="Key is down" sid="7156525138689147" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="6566945633600048" type="PlayerImages">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6120523433673423">
+            <conditions>
+                <condition behavior="Platform" id="10" name="Is by wall" sid="7048752161682251" type="Player">
+                    <param id="0" name="Side">0</param>
+                </condition>
+                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="653514515079253" type="Player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="8320960944319818" type="PlayerImages">
+                    <param id="0" name="Animation">&quot;Standing&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6070641770800377">
+            <conditions>
+                <condition behavior="Platform" id="10" name="Is by wall" sid="347429826006059" type="Player">
+                    <param id="0" name="Side">1</param>
+                </condition>
+                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="3034790875008355" type="Player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="2819163888040169" type="PlayerImages">
+                    <param id="0" name="Animation">&quot;Standing&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5518634177828494">
+            <conditions>
+                <condition behavior="Platform" id="9" name="On landed" sid="1183757226162532" type="Player" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="5234110724718981">
+                    <conditions>
+                        <condition behavior="Platform" id="0" name="Is moving" sid="839372035382601" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="2803629163035622" type="PlayerImages">
+                            <param id="0" name="Animation">&quot;Running&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7214730721443401">
+                    <conditions>
+                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="83561214055811" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="12033892683588" type="PlayerImages">
+                            <param id="0" name="Animation">&quot;Standing&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="3457695949554017">
+            <conditions>
+                <condition behavior="Platform" id="6" name="On fall" sid="5511624448714244" type="Player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="3097561717298774" type="PlayerImages">
+                    <param id="0" name="Animation">&quot;Falling&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2822809762579024">
+            <conditions>
+                <condition behavior="Platform" id="7" name="On stopped" sid="8013536870273854" type="Player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="1050910013962091" type="PlayerImages">
+                    <param id="0" name="Animation">&quot;Standing&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="3000294964557081" title="Spawn">
+            <sub-events>
+                <event-block sid="8243874654655541">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="2013776432114696" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="3096830378165414" type="banana">
+                            <param id="0" name="Angle">90</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="5954567992437489" type="mango">
+                            <param id="0" name="Angle">90</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="5275465313750702" type="strawberry">
+                            <param id="0" name="Angle">90</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="3768781216027599" type="passion">
+                            <param id="0" name="Angle">90</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="5846118670419128" type="ball2">
+                            <param id="0" name="Angle">90</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8339671421658471">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="1298141325365113" type="banana">
+                            <param id="0" name="Object">Flooring</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="1506627057403042" type="banana" />
+                        <action id="-9" name="Set value" sid="604231635580841" type="System">
+                            <param id="0" name="Variable">combomultiplier</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="6249280451363116" type="Audio">
+                            <param id="0" name="Audio file">SFX1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-15</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="2263790218833456" type="System">
+                            <param id="0" name="Variable">Scores</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6912886010971647">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="9231599694912459" type="mango">
+                            <param id="0" name="Object">Flooring</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="5352679515665849" type="mango" />
+                        <action id="-9" name="Set value" sid="6804556313977443" type="System">
+                            <param id="0" name="Variable">combomultiplier</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="7879595879052517" type="Audio">
+                            <param id="0" name="Audio file">SFX1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-15</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="2688746574252838" type="System">
+                            <param id="0" name="Variable">Scores</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9261130493249503">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="8399572657310517" type="strawberry">
+                            <param id="0" name="Object">Flooring</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="3281495783635474" type="strawberry" />
+                        <action id="-9" name="Set value" sid="6136722467385511" type="System">
+                            <param id="0" name="Variable">combomultiplier</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="734035382304779" type="Audio">
+                            <param id="0" name="Audio file">SFX1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-15</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="101946619839658" type="System">
+                            <param id="0" name="Variable">Scores</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7665794444196888">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="9217210464343295" type="passion">
+                            <param id="0" name="Object">Flooring</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="3801363638539996" type="passion" />
+                        <action id="-9" name="Set value" sid="837163809401791" type="System">
+                            <param id="0" name="Variable">combomultiplier</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="861464969036979" type="Audio">
+                            <param id="0" name="Audio file">SFX1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-15</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8183593666061614">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="4069394412449329" type="Player">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="3244833569370381" type="healthbar" />
+                        <action id="-2" name="Go to layout" sid="9306564565078951" type="System">
+                            <param id="0" name="Layout">Game Over</param>
+                        </action>
+                        <action id="0" name="Play" sid="4503088238205034" type="Audio">
+                            <param id="0" name="Audio file">GameOver1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-15</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="6" name="Stop" sid="51153783148287" type="Audio">
+                            <param id="0" name="Tag">&quot;R&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8308930725421144">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="5262156654016855" type="System">
+                            <param id="0" name="Interval (seconds)">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="8634365308444448" type="System">
+                            <param id="0" name="Object to create">banana</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">random(200,610)</param>
+                            <param id="3" name="Y">-30</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="435432155875468">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="9077830318488719" type="System">
+                            <param id="0" name="Interval (seconds)">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="2218639328965097" type="System">
+                            <param id="0" name="Object to create">mango</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">random(200,580)</param>
+                            <param id="3" name="Y">-30</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5007150361958472">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="7986872215462597" type="System">
+                            <param id="0" name="Interval (seconds)">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="4795903240113328" type="System">
+                            <param id="0" name="Object to create">strawberry</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">random(200,545)</param>
+                            <param id="3" name="Y">-30</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7937544298526742">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="690775290660848" type="System">
+                            <param id="0" name="Interval (seconds)">15</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="1087602119957887" type="System">
+                            <param id="0" name="Object to create">passion</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">random(200,600)</param>
+                            <param id="3" name="Y">-30</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4989351399709292">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="4236489333393917" type="System">
+                            <param id="0" name="Interval (seconds)">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="6585278398581196" type="System">
+                            <param id="0" name="Object to create">ball2</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">random(200,600)</param>
+                            <param id="3" name="Y">-30</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8746367588133099">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="8639926797168483" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="7420869954501364" type="banana" />
+                        <action id="-9" name="Destroy" sid="1459590465865735" type="mango" />
+                        <action id="-9" name="Destroy" sid="1977657216818786" type="strawberry" />
+                        <action id="-9" name="Destroy" sid="3412733599425913" type="passion" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="9175034865882186" title="Score">
+            <sub-events>
+                <event-block sid="8820266968174679">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="6177567545165354" type="Player">
+                            <param id="0" name="Object">banana</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="7124154766582926" type="banana" />
+                        <action id="-10" name="Add to" sid="3738395824327192" type="System">
+                            <param id="0" name="Variable">fruitcount</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="4778593943321302" type="System">
+                            <param id="0" name="Variable">combomultiplier</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="792593530542578" type="System">
+                            <param id="0" name="Variable">Scores</param>
+                            <param id="1" name="Value">Scores+(1*combomultiplier)</param>
+                        </action>
+                        <action id="0" name="Play" sid="4305322082217188" type="Audio">
+                            <param id="0" name="Audio file">Sword Swing</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-15</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6264992280585853">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="5522451384519229" type="Player">
+                            <param id="0" name="Object">mango</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="4762003465906901" type="mango" />
+                        <action id="-10" name="Add to" sid="9511128799942232" type="System">
+                            <param id="0" name="Variable">fruitcount</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="6335393710606344" type="System">
+                            <param id="0" name="Variable">combomultiplier</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1008212556503608" type="System">
+                            <param id="0" name="Variable">Scores</param>
+                            <param id="1" name="Value">Scores+(7*combomultiplier)</param>
+                        </action>
+                        <action id="0" name="Play" sid="9807896569595479" type="Audio">
+                            <param id="0" name="Audio file">Sword Swing</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-15</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8661259761691605">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="329419605332927" type="Player">
+                            <param id="0" name="Object">strawberry</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="2927208213587996" type="strawberry" />
+                        <action id="-10" name="Add to" sid="6008827158572105" type="System">
+                            <param id="0" name="Variable">fruitcount</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="5258164480932233" type="System">
+                            <param id="0" name="Variable">combomultiplier</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2322705400451084" type="System">
+                            <param id="0" name="Variable">Scores</param>
+                            <param id="1" name="Value">Scores+(4*combomultiplier)</param>
+                        </action>
+                        <action id="0" name="Play" sid="4898152389793074" type="Audio">
+                            <param id="0" name="Audio file">Sword Swing</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-15</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4273790336609245">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="8024008882829725" type="Player">
+                            <param id="0" name="Object">passion</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="4468219774301737" type="passion" />
+                        <action id="-10" name="Add to" sid="787761518575331" type="System">
+                            <param id="0" name="Variable">fruitcount</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="3108531948110598" type="System">
+                            <param id="0" name="Variable">combomultiplier</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8083336110359485" type="System">
+                            <param id="0" name="Variable">Scores</param>
+                            <param id="1" name="Value">Scores+(14*combomultiplier)</param>
+                        </action>
+                        <action id="0" name="Play" sid="3329688116696098" type="Audio">
+                            <param id="0" name="Audio file">Sword Swing</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-15</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1633351169740268">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="6789055045121291" type="Player">
+                            <param id="0" name="Object">ball</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="8731408682330312" type="ball" />
+                        <action id="-11" name="Subtract from" sid="2573709564073042" type="System">
+                            <param id="0" name="Variable">Scores</param>
+                            <param id="1" name="Value">7</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="6771190566899839" type="System">
+                            <param id="0" name="Variable">hit</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6116648306759591" type="System">
+                            <param id="0" name="Variable">combomultiplier</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="5976348509323753" type="Audio">
+                            <param id="0" name="Audio file">Explosion 3</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-15</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="711963824721414" type="Player">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">25</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="1153559804824203" type="healthbar">
+                            <param id="0" name="Width">Player.Health</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6302911663305844">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="5571012225517142" type="banana">
+                            <param id="0" name="Object">crow</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="6869357373722292" type="banana">
+                            <param id="0" name="Angle">215</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8752961494123328">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="8415829162602202" type="strawberry">
+                            <param id="0" name="Object">crow</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="1112967710244755" type="strawberry">
+                            <param id="0" name="Angle">305</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7470760854359431">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="9072999570893841" type="mango">
+                            <param id="0" name="Object">crow</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="7414487624764304" type="mango">
+                            <param id="0" name="Angle">321</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2790328057454036">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="2088895137685206" type="passion">
+                            <param id="0" name="Object">crow</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="6861831144634199" type="passion">
+                            <param id="0" name="Angle">255</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="4352833298138631" title="HUD">
+            <sub-events>
+                <event-block sid="9080725597634809">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="8741802341903682" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="6903827566052493" type="Score">
+                            <param id="0" name="Text">&quot;Score : &quot; &amp;Scores</param>
+                        </action>
+                        <action id="0" name="Set text" sid="9422533106579273" type="textcombo">
+                            <param id="0" name="Text">&quot;Combo : x&quot;&amp;combomultiplier </param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="3626243931212124">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="6782419103601683" type="crow">
+                    <param id="0" name="Object">wallleft</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Set flipped" sid="3118751149045148" type="crow">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="7840029236990772" type="crow">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1216365431920708">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="2684750996962186" type="crow">
+                    <param id="0" name="Object">Wallright</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Set flipped" sid="6850752282483183" type="crow">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6467829532771941">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="7976953704943047" type="System">
+                    <param id="0" name="Interval (seconds)">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="6323126609316972" type="System">
+                    <param id="0" name="Object to create">ball</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">-60</param>
+                    <param id="3" name="Y">554</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9121693967055634">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="6214642400798747" type="Keyboard">
+                    <param id="0" name="Key">80 (P)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set time scale" sid="5347284857822112" type="System">
+                    <param id="0" name="Time scale">0</param>
+                </action>
+                <action id="-3" name="Set position" sid="2994211340576944" type="textpause">
+                    <param id="0" name="X">230</param>
+                    <param id="1" name="Y">236</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6464038245937033">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="4783478323260324" type="Keyboard">
+                    <param id="0" name="Key">32 (Space)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set time scale" sid="5062139980740051" type="System">
+                    <param id="0" name="Time scale">1.0</param>
+                </action>
+                <action id="-3" name="Set position" sid="8636958504555394" type="textpause">
+                    <param id="0" name="X">230</param>
+                    <param id="1" name="Y">636</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2128899409147837">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="8243007215471142" type="Player">
+                    <param id="0" name="Object">ball2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="5575624902252364" type="ball2" />
+                <action id="-11" name="Subtract from" sid="6248473623236287" type="System">
+                    <param id="0" name="Variable">Scores</param>
+                    <param id="1" name="Value">7</param>
+                </action>
+                <action id="-10" name="Add to" sid="1655242009552607" type="System">
+                    <param id="0" name="Variable">hit</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="5336725310857536" type="System">
+                    <param id="0" name="Variable">combomultiplier</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Play" sid="8067822369433955" type="Audio">
+                    <param id="0" name="Audio file">Explosion 3</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-15</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="6507122402093564" type="Player">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">25</param>
+                </action>
+                <action id="-5" name="Set width" sid="7452619888644576" type="healthbar">
+                    <param id="0" name="Width">Player.Health</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

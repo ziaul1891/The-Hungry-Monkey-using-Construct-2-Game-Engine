@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Highscores sheet</name>
+    <events>
+        <variable constant="0" name="highscorenew" sid="6595549230337331" static="0" type="text">0,0,0,0,0,0,0,0,0,0</variable>
+        <event-block sid="3724847583470464">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="9475393745881162" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="3808902251902293">
+                    <conditions>
+                        <condition id="3" name="Local key exists" sid="8540214965758343" type="WebStorage">
+                            <param id="0" name="Key">&quot;wHighScore&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="6282702089201037" type="System">
+                            <param id="0" name="Variable">highscorenew</param>
+                            <param id="1" name="Value">WebStorage.LocalValue(&quot;wHighScore&quot;)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="5100144294671596">
+                            <conditions>
+                                <condition id="3" name="For each element" sid="5994817201227099" type="arScore">
+                                    <param id="0" name="Axes">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="2" name="Set at X" sid="3416888635937568" type="arScore">
+                                    <param id="0" name="X">arScore.CurX</param>
+                                    <param id="1" name="Value">int(tokenat(highscorenew,arScore.CurX,&quot;,&quot;))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="2663165051753911">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="3553081107094777" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="9789058114955764">
+                            <conditions>
+                                <condition id="3" name="For each element" sid="412287245016536" type="arScore">
+                                    <param id="0" name="Axes">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="2" name="Set at X" sid="4172046648562582" type="arScore">
+                                    <param id="0" name="X">arScore.CurX</param>
+                                    <param id="1" name="Value">int(tokenat(highscorenew,arScore.CurX,&quot;,&quot;))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="1961392856089324">
+                    <conditions />
+                    <actions>
+                        <action id="8" name="Sort" sid="4760730087103995" type="arScore">
+                            <param id="0" name="Axis">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6589213748813256">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="1650652517839552" type="System">
+                            <param id="0" name="First value">Scores</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">arScore.At(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="9" name="Delete" sid="2879955637075837" type="arScore">
+                            <param id="0" name="Index">0</param>
+                            <param id="1" name="Axis">0</param>
+                        </action>
+                        <action id="10" name="Insert" sid="9009434383092656" type="arScore">
+                            <param id="0" name="Value">Scores</param>
+                            <param id="1" name="Index">0</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="8" name="Sort" sid="5334480254487031" type="arScore">
+                            <param id="0" name="Axis">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <variable constant="0" name="n" sid="6752504551059889" static="0" type="number">9</variable>
+                <event-block sid="4231882016599665">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="8531269377322051" type="System">
+                            <param id="0" name="Object">texthighscorenew</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="5483705893338144" type="texthighscorenew">
+                            <param id="0" name="Text">arScore.At(n)</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="8306856997414038" type="System">
+                            <param id="0" name="Variable">n</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5037539915403011">
+                    <conditions />
+                    <actions>
+                        <action id="0" name="Set local value" sid="697995516189521" type="WebStorage">
+                            <param id="0" name="Key">&quot;wHighScore&quot;</param>
+                            <param id="1" name="Value">arscore.At(0) &amp; &quot;,&quot; &amp; arscore.At(1) &amp; &quot;,&quot; &amp; arscore.At(2) &amp; &quot;,&quot; &amp;arscore.At(3) &amp; &quot;,&quot; &amp; arscore.At(4) &amp; &quot;,&quot; &amp; arscore.At(5) &amp; &quot;,&quot; &amp; arscore.At(6) &amp; &quot;,&quot; &amp; arscore.At(7) &amp; &quot;,&quot; &amp; arscore.At(8) &amp; &quot;,&quot; &amp; arscore.At(9)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7498489510124415">
+            <conditions>
+                <condition id="0" name="On clicked" sid="4168621389192655" type="menufromhighscorenew" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="8597508991636716" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

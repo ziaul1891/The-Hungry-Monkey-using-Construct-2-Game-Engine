@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Game Over sheet</name>
+    <events>
+        <variable constant="0" name="hitfinal" sid="5702062129820022" static="0" type="number">0</variable>
+        <variable constant="0" name="fruitcountfinal" sid="6623066285207586" static="0" type="number">0</variable>
+        <variable constant="0" name="finalscore" sid="8235730288283475" static="0" type="number">0</variable>
+        <event-block sid="1862602075356405">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="6588002854312221" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="7407095862006487" type="System">
+                    <param id="0" name="Variable">finalscore</param>
+                    <param id="1" name="Value">Scores</param>
+                </action>
+                <action id="-9" name="Set value" sid="1087298406482623" type="System">
+                    <param id="0" name="Variable">fruitcountfinal</param>
+                    <param id="1" name="Value">fruitcount</param>
+                </action>
+                <action id="-9" name="Set value" sid="3392753155219508" type="System">
+                    <param id="0" name="Variable">hitfinal</param>
+                    <param id="1" name="Value">hit</param>
+                </action>
+                <action id="0" name="Set text" sid="2495177705578674" type="scorefinal">
+                    <param id="0" name="Text">&quot;Final Score : &quot;&amp;finalscore</param>
+                </action>
+                <action id="0" name="Set text" sid="6109540553126112" type="fruitcountfinal">
+                    <param id="0" name="Text">&quot;Fruits Eaten : &quot;&amp;fruitcountfinal</param>
+                </action>
+                <action id="0" name="Set text" sid="600194752682782" type="hitfinal">
+                    <param id="0" name="Text">&quot;Hit Taken : &quot;&amp;hitfinal</param>
+                </action>
+                <action id="-9" name="Destroy" sid="5080185305658789" type="banana" />
+                <action id="-9" name="Destroy" sid="6414027084550566" type="Player" />
+                <action id="-9" name="Destroy" sid="5055697412618451" type="mango" />
+                <action id="-9" name="Destroy" sid="4329257002051627" type="strawberry" />
+                <action id="-9" name="Destroy" sid="8130993230754161" type="passion" />
+            </actions>
+        </event-block>
+        <event-block sid="1203558286970723">
+            <conditions>
+                <condition id="0" name="On clicked" sid="5788036198734433" type="gotohighscore" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="7249930321493408" type="System">
+                    <param id="0" name="Layout">Highscores</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
